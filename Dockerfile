@@ -2,13 +2,16 @@ FROM ubuntu:18.10
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update
+RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
 
 # Install Git
 RUN apt-get install -y git
 
 # Install Nano text editor
 RUN apt-get install -y nano
+
+# Install ping tool
+RUN apt-get install -y iputils-ping
 
 # Install nginx
 RUN apt-get install -y nginx
